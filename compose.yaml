@@ -1,0 +1,11 @@
+# Global composer file for manage orchestration of front and back api in same build
+# This file depends on three projects : Front-App, TuiFly.BookingApi and TuiFly.FlySearchApi
+
+services:
+  tuifly_app:
+    build:
+      context: ./src/Front-App
+    environment:
+      NODE_ENV: production
+    ports:
+      - 5088:3000
