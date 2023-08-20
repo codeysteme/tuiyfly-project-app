@@ -1,30 +1,33 @@
-import { AppBar, IconButton, Toolbar, Typography } from "@material-ui/core";
+import AppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import IconButton from "@mui/material/IconButton";
 import React from "react";
 import logo from "../static/tuifly-logo.png";
 
 export default function Header() {
   const displayDesktop = () => {
     return (
-      <Toolbar style={{ display: "flex", justifyContent: "space-arround" }}>
+      <Toolbar
+        style={{
+          display: "flex",
+          justifyContent: "space-around",
+        }}
+      >
         <IconButton
           edge="start"
           color="inherit"
           aria-label="menu"
           sx={{ mr: 2 }}
+          component="div"
         >
-          <img
-            src={logo}
-            className="App-logo"
-            alt="logo"
-            style={{ width: "137px" }}
-          />
+          <img src={logo} alt="logo tuifly" style={{ width: "137px" }} />
         </IconButton>
         <Typography
           variant="h6"
           component="div"
           sx={{ flexGrow: 1 }}
           style={{
-            marginLeft: "10px",
             fontSize: "17px",
             textAlign: "center",
             fontFamily: "roboto",
