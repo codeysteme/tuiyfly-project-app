@@ -1,0 +1,15 @@
+{
+  "recommendations": [
+    "patbenatar.advanced-new-file",
+    "formulahendry.auto-rename-tag",
+    "naumovs.color-highlight",
+    "carbonid1.emmet-jss",
+    "irongeek.vscode-env",
+    "dsznajder.es7-react-js-snippets",
+    "dbaeumer.vscode-eslint",
+    "wix.vscode-import-cost",
+    "christian-kohler.npm-intellisense",
+    "esbenp.prettier-vscode",
+    "richie5um2.vscode-sort-json"
+  ]
+}
