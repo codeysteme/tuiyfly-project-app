@@ -9,10 +9,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Mock\Fixtures\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Update="Mock\Fixtures\airports.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

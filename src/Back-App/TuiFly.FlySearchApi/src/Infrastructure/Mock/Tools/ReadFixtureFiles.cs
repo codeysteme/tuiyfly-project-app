@@ -30,7 +30,7 @@ namespace TuiFly.FlySearchApi.Infrastructure.Mock.Tools
                 Converters = { new JsonStringEnumConverter() }
             };
 
-            return JsonSerializer.Deserialize<TResponse>(Read($"../Infrastructure/{path}"), options);
+            return JsonSerializer.Deserialize<TResponse>(Read(path), options);
         }
 
         /// <summary>

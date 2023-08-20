@@ -1,0 +1,566 @@
+[
+  {
+    "available": true,
+    "countryName": "Espagne",
+    "id": "ACE",
+    "name": "Lanzarote"
+  },
+  {
+    "available": true,
+    "countryName": "Espagne",
+    "id": "AGP",
+    "name": "Malaga"
+  },
+  {
+    "available": true,
+    "countryName": "Espagne",
+    "id": "ALC",
+    "name": "Alicante"
+  },
+  {
+    "available": true,
+    "countryName": "Espagne",
+    "id": "FUE",
+    "name": "Fuerteventura"
+  },
+  {
+    "available": true,
+    "countryName": "Espagne",
+    "id": "GRO",
+    "name": "Gérone"
+  },
+  {
+    "available": true,
+    "countryName": "Espagne",
+    "id": "IBZ",
+    "name": "Ibiza"
+  },
+  {
+    "available": true,
+    "countryName": "Espagne",
+    "id": "LEI",
+    "name": "Almería"
+  },
+  {
+    "available": true,
+    "countryName": "Espagne",
+    "id": "LPA",
+    "name": "Gran Canaria"
+  },
+  {
+    "available": true,
+    "countryName": "Espagne",
+    "id": "MAH",
+    "name": "Minorque"
+  },
+  {
+    "available": true,
+    "countryName": "Espagne",
+    "id": "PMI",
+    "name": "Palma de Majorque"
+  },
+  {
+    "available": true,
+    "countryName": "Espagne",
+    "id": "REU",
+    "name": "Reus"
+  },
+  {
+    "available": true,
+    "countryName": "Espagne",
+    "id": "RMU",
+    "name": "Murcia-Corvera"
+  },
+  {
+    "available": true,
+    "countryName": "Espagne",
+    "id": "TFS",
+    "name": "Tenerife"
+  },
+  {
+    "available": true,
+    "countryName": "Espagne",
+    "id": "XRY",
+    "name": "Jerez"
+  },
+  {
+    "available": true,
+    "countryName": "Turquie",
+    "id": "ADB",
+    "name": "Izmir"
+  },
+  {
+    "available": true,
+    "countryName": "Turquie",
+    "id": "AOE",
+    "name": "Eskisehir"
+  },
+  {
+    "available": true,
+    "countryName": "Turquie",
+    "id": "ASR",
+    "name": "Kayseri"
+  },
+  {
+    "available": true,
+    "countryName": "Turquie",
+    "id": "AYT",
+    "name": "Antalya"
+  },
+  {
+    "available": true,
+    "countryName": "Turquie",
+    "id": "BJV",
+    "name": "Bodrum"
+  },
+  {
+    "available": true,
+    "countryName": "Turquie",
+    "id": "DLM",
+    "name": "Dalaman"
+  },
+  {
+    "available": true,
+    "countryName": "Maroc",
+    "id": "AGA",
+    "name": "Agadir"
+  },
+  {
+    "available": true,
+    "countryName": "Maroc",
+    "id": "AHU",
+    "name": "Al Hoceima"
+  },
+  {
+    "available": true,
+    "countryName": "Maroc",
+    "id": "CMN",
+    "name": "Casablanca"
+  },
+  {
+    "available": true,
+    "countryName": "Maroc",
+    "id": "FEZ",
+    "name": "Fez"
+  },
+  {
+    "available": true,
+    "countryName": "Maroc",
+    "id": "NDR",
+    "name": "Nador"
+  },
+  {
+    "available": true,
+    "countryName": "Maroc",
+    "id": "OUD",
+    "name": "Oujda"
+  },
+  {
+    "available": true,
+    "countryName": "Maroc",
+    "id": "RAK",
+    "name": "Marrakech"
+  },
+  {
+    "available": true,
+    "countryName": "Maroc",
+    "id": "RBA",
+    "name": "Rabat"
+  },
+  {
+    "available": true,
+    "countryName": "Maroc",
+    "id": "TNG",
+    "name": "Tanger"
+  },
+  {
+    "available": true,
+    "countryName": "Maroc",
+    "id": "TTU",
+    "name": "Tetouan"
+  },
+  {
+    "available": true,
+    "countryName": "Algérie",
+    "id": "ALG",
+    "name": "Alger"
+  },
+  {
+    "available": true,
+    "countryName": "Algérie",
+    "id": "BJA",
+    "name": "Bejaia"
+  },
+  {
+    "available": true,
+    "countryName": "Algérie",
+    "id": "CZL",
+    "name": "Constantine"
+  },
+  {
+    "available": true,
+    "countryName": "Algérie",
+    "id": "ORN",
+    "name": "Oran"
+  },
+  {
+    "available": true,
+    "countryName": "Algérie",
+    "id": "TLM",
+    "name": "Tlemcen"
+  },
+  {
+    "available": true,
+    "countryName": "Belgique",
+    "id": "ANR",
+    "name": "Anvers"
+  },
+  {
+    "available": true,
+    "countryName": "Belgique",
+    "id": "BRU",
+    "name": "Bruxelles"
+  },
+  {
+    "available": true,
+    "countryName": "Belgique",
+    "id": "CRL",
+    "name": "Charleroi"
+  },
+  {
+    "available": true,
+    "countryName": "Belgique",
+    "id": "LGG",
+    "name": "Liège"
+  },
+  {
+    "available": true,
+    "countryName": "Belgique",
+    "id": "OST",
+    "name": "Ostende-Bruges"
+  },
+  {
+    "available": true,
+    "countryName": "Italie",
+    "id": "BDS",
+    "name": "Brindisi"
+  },
+  {
+    "available": true,
+    "countryName": "Italie",
+    "id": "BGY",
+    "name": "Milan-Bergamo"
+  },
+  {
+    "available": true,
+    "countryName": "Italie",
+    "id": "BLQ",
+    "name": "Bologna"
+  },
+  {
+    "available": true,
+    "countryName": "Italie",
+    "id": "CTA",
+    "name": "Catane"
+  },
+  {
+    "available": true,
+    "countryName": "Italie",
+    "id": "NAP",
+    "name": "Naples"
+  },
+  {
+    "available": true,
+    "countryName": "Italie",
+    "id": "PMO",
+    "name": "Palerme"
+  },
+  {
+    "available": true,
+    "countryName": "Italie",
+    "id": "SUF",
+    "name": "Lamezia Terme"
+  },
+  {
+    "available": true,
+    "countryName": "Gambie",
+    "id": "BJL",
+    "name": "Banjul"
+  },
+  {
+    "available": true,
+    "countryName": "France",
+    "id": "BOD",
+    "name": "Bordeaux"
+  },
+  {
+    "available": true,
+    "countryName": "France",
+    "id": "ETZ",
+    "name": "Metz-Nancy"
+  },
+  {
+    "available": true,
+    "countryName": "France",
+    "id": "LIL",
+    "name": "Lille"
+  },
+  {
+    "available": true,
+    "countryName": "France",
+    "id": "ORY",
+    "name": "Paris-Orly"
+  },
+  {
+    "available": true,
+    "countryName": "Bulgarie",
+    "id": "BOJ",
+    "name": "Burgas"
+  },
+  {
+    "available": true,
+    "countryName": "Bulgarie",
+    "id": "VAR",
+    "name": "Varna"
+  },
+  {
+    "available": true,
+    "countryName": "Cap-Vert",
+    "id": "BVC",
+    "name": "Boa Vista"
+  },
+  {
+    "available": true,
+    "countryName": "Cap-Vert",
+    "id": "SID",
+    "name": "Sal"
+  },
+  {
+    "available": true,
+    "countryName": "Grèce",
+    "id": "CFU",
+    "name": "Corfou"
+  },
+  {
+    "available": true,
+    "countryName": "Grèce",
+    "id": "CHQ",
+    "name": "Crete -Chania"
+  },
+  {
+    "available": true,
+    "countryName": "Grèce",
+    "id": "GPA",
+    "name": "Araxos"
+  },
+  {
+    "available": true,
+    "countryName": "Grèce",
+    "id": "HER",
+    "name": "Crete -Heraklion"
+  },
+  {
+    "available": true,
+    "countryName": "Grèce",
+    "id": "JMK",
+    "name": "Mykonos"
+  },
+  {
+    "available": true,
+    "countryName": "Grèce",
+    "id": "JTR",
+    "name": "Santorin"
+  },
+  {
+    "available": true,
+    "countryName": "Grèce",
+    "id": "KGS",
+    "name": "Kos"
+  },
+  {
+    "available": true,
+    "countryName": "Grèce",
+    "id": "MJT",
+    "name": "Lesbos"
+  },
+  {
+    "available": true,
+    "countryName": "Grèce",
+    "id": "RHO",
+    "name": "Rhodes"
+  },
+  {
+    "available": true,
+    "countryName": "Grèce",
+    "id": "SKG",
+    "name": "Thessalonique"
+  },
+  {
+    "available": true,
+    "countryName": "Grèce",
+    "id": "SMI",
+    "name": "Samos"
+  },
+  {
+    "available": true,
+    "countryName": "Grèce",
+    "id": "ZTH",
+    "name": "Zakynthos"
+  },
+  {
+    "available": true,
+    "countryName": "Mexique",
+    "id": "CUN",
+    "name": "Cancun"
+  },
+  {
+    "available": true,
+    "countryName": "Croatie",
+    "id": "DBV",
+    "name": "Dubrovnik"
+  },
+  {
+    "available": true,
+    "countryName": "Croatie",
+    "id": "SPU",
+    "name": "Split"
+  },
+  {
+    "available": true,
+    "countryName": "Tunisie",
+    "id": "DJE",
+    "name": "Djerba"
+  },
+  {
+    "available": true,
+    "countryName": "Tunisie",
+    "id": "NBE",
+    "name": "Enfidha"
+  },
+  {
+    "available": true,
+    "countryName": "Tunisie",
+    "id": "TUN",
+    "name": "Tunis"
+  },
+  {
+    "available": true,
+    "countryName": "Sénégal",
+    "id": "DSS",
+    "name": "Dakar"
+  },
+  {
+    "available": true,
+    "countryName": "Kosovo",
+    "id": "PRN",
+    "name": "Pristina"
+  },
+  {
+    "available": true,
+    "countryName": "Albanie",
+    "id": "TIA",
+    "name": "Tirana"
+  },
+  {
+    "available": true,
+    "countryName": "Monténégro",
+    "id": "TIV",
+    "name": "Tivat"
+  },
+  {
+    "available": true,
+    "countryName": "Pays-Bas",
+    "id": "EIN",
+    "name": "Eindhoven"
+  },
+  {
+    "available": true,
+    "countryName": "Pays-Bas",
+    "id": "RTM",
+    "name": "Rotterdam"
+  },
+  {
+    "available": true,
+    "countryName": "Portugal",
+    "id": "FAO",
+    "name": "Faro"
+  },
+  {
+    "available": true,
+    "countryName": "Portugal",
+    "id": "FNC",
+    "name": "Madère"
+  },
+  {
+    "available": true,
+    "countryName": "Portugal",
+    "id": "PDL",
+    "name": "Açores Ponta Delgada"
+  },
+  {
+    "available": true,
+    "countryName": "Égypte",
+    "id": "HRG",
+    "name": "Hurghada"
+  },
+  {
+    "available": true,
+    "countryName": "Égypte",
+    "id": "LXR",
+    "name": "Luxor"
+  },
+  {
+    "available": true,
+    "countryName": "Égypte",
+    "id": "RMF",
+    "name": "Marsa Alam"
+  },
+  {
+    "available": true,
+    "countryName": "Égypte",
+    "id": "SSH",
+    "name": "Sharm El Sheikh"
+  },
+  {
+    "available": true,
+    "countryName": "Autriche",
+    "id": "INN",
+    "name": "Innsbruck"
+  },
+  {
+    "available": true,
+    "countryName": "Finlande",
+    "id": "KTT",
+    "name": "Kittila-Laponie"
+  },
+  {
+    "available": true,
+    "countryName": "Chypre",
+    "id": "LCA",
+    "name": "Larnaca"
+  },
+  {
+    "available": true,
+    "countryName": "Chypre",
+    "id": "PFO",
+    "name": "Paphos"
+  },
+  {
+    "available": true,
+    "countryName": "Jamaïque",
+    "id": "MBJ",
+    "name": "Montego Bay"
+  },
+  {
+    "available": true,
+    "countryName": "République dominicaine",
+    "id": "PUJ",
+    "name": "Punta Cana"
+  },
+  {
+    "available": true,
+    "countryName": "Cuba",
+    "id": "VRA",
+    "name": "Varadero"
+  }
+]

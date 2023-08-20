@@ -15,3 +15,9 @@ services:
       context: ./src/Back-App/TuiFly.BookingApi
     ports:
       - 7022:80
+
+  tuifly_flysearch_api:
+    build:
+      context: ./src/Back-App/TuiFly.FlySearchApi
+    ports:
+      - 7025:80

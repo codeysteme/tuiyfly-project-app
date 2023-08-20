@@ -13,7 +13,7 @@ namespace TuiFly.FlySearchApi.Infrastructure.Repository
         /// <returns></returns>
         public IEnumerable<AirportDto> GetAirportList()
         {
-            return ReadFixtureFiles.ReadAndDeserialize<IEnumerable<AirportDto>>("Mock/Fixtures/airports");
+            return ReadFixtureFiles.ReadAndDeserialize<IEnumerable<AirportDto>>("StaticFiles/airports");
         }
     }
 }
