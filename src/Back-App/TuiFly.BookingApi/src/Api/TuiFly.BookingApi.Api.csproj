@@ -4,9 +4,13 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
 	  <GenerateDocumentationFile>true</GenerateDocumentationFile>
 	  <NoWarn>$(NoWarn);1591</NoWarn>
+	  <UserSecretsId>588c0591-01be-44b6-9ad4-040ee166e2f0</UserSecretsId>
+	  <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+	  <DockerfileContext>..\..</DockerfileContext>
   </PropertyGroup>
 
 	<ItemGroup>
+		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.4" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
 		<PackageReference Include="FluentValidation" Version="11.5.2" />
@@ -16,6 +20,12 @@
 	<ItemGroup>
 		<ProjectReference Include="..\Domain\TuiFly.BookingApi.Domain.csproj" />
 		<ProjectReference Include="..\Infrastructure\TuiFly.BookingApi.Infrastructure.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="db\TuiFly_BookingDatabase.db">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
 	</ItemGroup>
 
 </Project>

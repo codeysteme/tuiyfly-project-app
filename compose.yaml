@@ -9,3 +9,9 @@ services:
       NODE_ENV: production
     ports:
       - 5088:3000
+
+  tuifly_booking_api:
+    build:
+      context: ./src/Back-App/TuiFly.BookingApi
+    ports:
+      - 7022:80

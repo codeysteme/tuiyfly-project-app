@@ -127,7 +127,7 @@ namespace TuiFly.BookingApi.Api.Controllers.Fligths
             {
                 if (ex.Message.Contains("DUPLICATED"))
                 {
-                    return new BadRequestObjectResult(new { message = "Error Booking alreaedy exist !" });
+                    return new BadRequestObjectResult(new { message = "Error Booking already exist !" });
                 }
             }
 
