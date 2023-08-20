@@ -1,10 +1,11 @@
 import Header from "../Header";
+import Home from "../Home";
 
 function App() {
   return (
     <>
       <Header />
-      <div>Salut le monde je suis </div>
+      <Home />
     </>
   );
 }

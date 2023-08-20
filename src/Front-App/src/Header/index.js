@@ -5,7 +5,7 @@ import logo from "../static/tuifly-logo.png";
 export default function Header() {
   const displayDesktop = () => {
     return (
-      <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
+      <Toolbar style={{ display: "flex", justifyContent: "space-arround" }}>
         <IconButton
           edge="start"
           color="inherit"
@@ -16,7 +16,7 @@ export default function Header() {
             src={logo}
             className="App-logo"
             alt="logo"
-            style={{ width: "120px" }}
+            style={{ width: "137px" }}
           />
         </IconButton>
         <Typography
@@ -24,9 +24,8 @@ export default function Header() {
           component="div"
           sx={{ flexGrow: 1 }}
           style={{
-            marginLeft: "200px",
-            fontSize: "19px",
-            width: "100%",
+            marginLeft: "10px",
+            fontSize: "17px",
             textAlign: "center",
             fontFamily: "roboto",
           }}
@@ -41,7 +40,7 @@ export default function Header() {
   return (
     <header>
       <AppBar
-        style={{ margin: 0 }}
+        style={{ margin: 0, backgroundColor: "#70CBF4" }}
         component="nav"
         position="relative"
         color="transparent"
