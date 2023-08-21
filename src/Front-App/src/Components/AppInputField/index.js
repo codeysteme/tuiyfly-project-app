@@ -14,6 +14,8 @@ export default function AppInputField({ name, labelName, placeHolder }) {
   const { errors, touched, handleChange, handleBlur, values } =
     useFormikContext();
 
+  const passengerData = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
   return (
     <Box>
       <InputLabel
@@ -33,10 +35,8 @@ export default function AppInputField({ name, labelName, placeHolder }) {
           svg: { color: "#1a7ead", fontSize: "20px" },
           style: { fontSize: "13px" },
         }}
-        slotProps={{ textField: { size: "small" } }}
         size="small"
         select
-        // label={placeHolder}
         name={name}
         value={values[name]}
         error={errors[name] && touched[name]}
@@ -51,17 +51,11 @@ export default function AppInputField({ name, labelName, placeHolder }) {
           ),
         }}
       >
-        {Array(9)
-          .fill(1)
-          .map((i, option) => (
-            <MenuItem
-              key={option}
-              value={++option}
-              style={{ fontSize: "13px" }}
-            >
-              {option} Adulte{option > 1 ? "s" : ""}
-            </MenuItem>
-          ))}
+        {passengerData.map((i, option) => (
+          <MenuItem key={option} value={option} style={{ fontSize: "13px" }}>
+            {option} Adulte{option > 1 ? "s" : ""}
+          </MenuItem>
+        ))}
       </TextField>
     </Box>
   );

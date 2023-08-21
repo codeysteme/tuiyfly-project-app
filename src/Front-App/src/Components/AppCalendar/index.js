@@ -11,7 +11,7 @@ import { useFormikContext } from "formik";
 import { Box, InputLabel } from "@mui/material";
 
 export default function AppCalendar({ name, labelName }) {
-  const { setFieldValue, values } = useFormikContext();
+  const { errors, touched, setFieldValue } = useFormikContext();
 
   return (
     <Box>
@@ -34,7 +34,6 @@ export default function AppCalendar({ name, labelName }) {
       >
         <DatePicker
           label="Selectonnez une date"
-          slotProps={{ textField: { size: "small" } }}
           sx={{
             width: "210px",
             backgroundColor: "#fff",
@@ -46,8 +45,17 @@ export default function AppCalendar({ name, labelName }) {
           margin="normal"
           minDate={dayjs(new Date())}
           format="DD MMMM YYYY"
-          value={values[name]}
-          onChange={(selectedDate) => setFieldValue(name, selectedDate)}
+          onChange={(selectedDate) =>
+            setFieldValue(name, selectedDate.toISOString())
+          }
+          slotProps={{
+            textField: {
+              size: "small",
+              variant: "outlined",
+              error: errors[name] && touched[name],
+              helperText: errors[name] && touched[name] ? errors[name] : null,
+            },
+          }}
         />
       </LocalizationProvider>
     </Box>

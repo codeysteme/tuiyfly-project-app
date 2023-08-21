@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Net.Http.Headers;
 using TuiFly.FlySearchApi.Api.Common.Middlewares;
 using TuiFly.FlySearchApi.Api.Controllers.Fligths.Validations;
 using TuiFly.FlySearchApi.Api.Extensions;
@@ -20,6 +21,8 @@ namespace TuiFly.FlySearchApi.Api
 
         public IConfiguration Configuration { get; }
 
+        private const string AllowedSpecificOrigins = "AllowedSpecificOrigins";
+
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
@@ -31,6 +34,13 @@ namespace TuiFly.FlySearchApi.Api
             services.AddAppServices();
             //Cache init
             services.AddCacheConfiguration(Configuration);
+            //enable cors policy
+            services.AddCors(options => options.AddPolicy(name: AllowedSpecificOrigins,
+                policy =>
+                {
+                    policy.WithOrigins("http://localhost:3000")
+                    .WithHeaders(HeaderNames.ContentType, HeaderNames.AccessControlAllowOrigin, HeaderNames.Accept);
+                }));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -43,6 +53,7 @@ namespace TuiFly.FlySearchApi.Api
                 app.UseSwaggerUI();
             }
 
+            app.UseCors(AllowedSpecificOrigins);
             app.UseHttpsRedirection();
             app.UseRouting();
             app.UseAuthorization();

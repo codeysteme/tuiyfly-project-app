@@ -1,0 +1,8 @@
+{
+  "development": {
+    "flySearchApiUrl": "https://localhost:44304/api"
+  },
+  "production": {
+    "flySearchApiUrl": "https://localhost:7025/api"
+  }
+}
