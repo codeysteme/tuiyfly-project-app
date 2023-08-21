@@ -27,7 +27,7 @@
     "available": true,
     "countryName": "Espagne",
     "id": "GRO",
-    "name": "Gérone"
+    "name": "GÃ©rone"
   },
   {
     "available": true,
@@ -39,7 +39,7 @@
     "available": true,
     "countryName": "Espagne",
     "id": "LEI",
-    "name": "Almería"
+    "name": "AlmerÃ­a"
   },
   {
     "available": true,
@@ -181,31 +181,31 @@
   },
   {
     "available": true,
-    "countryName": "Algérie",
+    "countryName": "AlgÃ©rie",
     "id": "ALG",
     "name": "Alger"
   },
   {
     "available": true,
-    "countryName": "Algérie",
+    "countryName": "AlgÃ©rie",
     "id": "BJA",
     "name": "Bejaia"
   },
   {
     "available": true,
-    "countryName": "Algérie",
+    "countryName": "AlgÃ©rie",
     "id": "CZL",
     "name": "Constantine"
   },
   {
     "available": true,
-    "countryName": "Algérie",
+    "countryName": "AlgÃ©rie",
     "id": "ORN",
     "name": "Oran"
   },
   {
     "available": true,
-    "countryName": "Algérie",
+    "countryName": "AlgÃ©rie",
     "id": "TLM",
     "name": "Tlemcen"
   },
@@ -231,7 +231,7 @@
     "available": true,
     "countryName": "Belgique",
     "id": "LGG",
-    "name": "Liège"
+    "name": "LiÃ¨ge"
   },
   {
     "available": true,
@@ -337,73 +337,73 @@
   },
   {
     "available": true,
-    "countryName": "Grèce",
+    "countryName": "GrÃ¨ce",
     "id": "CFU",
     "name": "Corfou"
   },
   {
     "available": true,
-    "countryName": "Grèce",
+    "countryName": "GrÃ¨ce",
     "id": "CHQ",
     "name": "Crete -Chania"
   },
   {
     "available": true,
-    "countryName": "Grèce",
+    "countryName": "GrÃ¨ce",
     "id": "GPA",
     "name": "Araxos"
   },
   {
     "available": true,
-    "countryName": "Grèce",
+    "countryName": "GrÃ¨ce",
     "id": "HER",
     "name": "Crete -Heraklion"
   },
   {
     "available": true,
-    "countryName": "Grèce",
+    "countryName": "GrÃ¨ce",
     "id": "JMK",
     "name": "Mykonos"
   },
   {
     "available": true,
-    "countryName": "Grèce",
+    "countryName": "GrÃ¨ce",
     "id": "JTR",
     "name": "Santorin"
   },
   {
     "available": true,
-    "countryName": "Grèce",
+    "countryName": "GrÃ¨ce",
     "id": "KGS",
     "name": "Kos"
   },
   {
     "available": true,
-    "countryName": "Grèce",
+    "countryName": "GrÃ¨ce",
     "id": "MJT",
     "name": "Lesbos"
   },
   {
     "available": true,
-    "countryName": "Grèce",
+    "countryName": "GrÃ¨ce",
     "id": "RHO",
     "name": "Rhodes"
   },
   {
     "available": true,
-    "countryName": "Grèce",
+    "countryName": "GrÃ¨ce",
     "id": "SKG",
     "name": "Thessalonique"
   },
   {
     "available": true,
-    "countryName": "Grèce",
+    "countryName": "GrÃ¨ce",
     "id": "SMI",
     "name": "Samos"
   },
   {
     "available": true,
-    "countryName": "Grèce",
+    "countryName": "GrÃ¨ce",
     "id": "ZTH",
     "name": "Zakynthos"
   },
@@ -445,7 +445,7 @@
   },
   {
     "available": true,
-    "countryName": "Sénégal",
+    "countryName": "SÃ©nÃ©gal",
     "id": "DSS",
     "name": "Dakar"
   },
@@ -463,7 +463,7 @@
   },
   {
     "available": true,
-    "countryName": "Monténégro",
+    "countryName": "MontÃ©nÃ©gro",
     "id": "TIV",
     "name": "Tivat"
   },
@@ -489,35 +489,35 @@
     "available": true,
     "countryName": "Portugal",
     "id": "FNC",
-    "name": "Madère"
+    "name": "MadÃ¨re"
   },
   {
     "available": true,
     "countryName": "Portugal",
     "id": "PDL",
-    "name": "Açores Ponta Delgada"
+    "name": "AÃ§ores Ponta Delgada"
   },
   {
     "available": true,
-    "countryName": "Égypte",
+    "countryName": "Ã‰gypte",
     "id": "HRG",
     "name": "Hurghada"
   },
   {
     "available": true,
-    "countryName": "Égypte",
+    "countryName": "Ã‰gypte",
     "id": "LXR",
     "name": "Luxor"
   },
   {
     "available": true,
-    "countryName": "Égypte",
+    "countryName": "Ã‰gypte",
     "id": "RMF",
     "name": "Marsa Alam"
   },
   {
     "available": true,
-    "countryName": "Égypte",
+    "countryName": "Ã‰gypte",
     "id": "SSH",
     "name": "Sharm El Sheikh"
   },
@@ -547,13 +547,13 @@
   },
   {
     "available": true,
-    "countryName": "Jamaïque",
+    "countryName": "JamaÃ¯que",
     "id": "MBJ",
     "name": "Montego Bay"
   },
   {
     "available": true,
-    "countryName": "République dominicaine",
+    "countryName": "RÃ©publique dominicaine",
     "id": "PUJ",
     "name": "Punta Cana"
   },

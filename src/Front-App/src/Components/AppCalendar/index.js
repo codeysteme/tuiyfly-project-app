@@ -8,26 +8,23 @@ import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import fr from "dayjs/locale/fr";
 import { frFR } from "@mui/x-date-pickers/locales";
 import { useFormikContext } from "formik";
-import { Box, Typography } from "@mui/material";
-
-import "./style.css";
+import { Box, InputLabel } from "@mui/material";
 
 export default function AppCalendar({ name, labelName }) {
   const { setFieldValue, values } = useFormikContext();
 
   return (
-    <Box style={{ width: "250px" }}>
-      <Typography
-        component="p"
+    <Box>
+      <InputLabel
+        htmlFor="filled-adornment-password"
         style={{
-          fontSize: "14px",
+          fontSize: "13px",
           fontWeight: "normal",
           color: "#09295D",
-          margin: "5px 0",
         }}
       >
         {labelName}
-      </Typography>
+      </InputLabel>
       <LocalizationProvider
         dateAdapter={AdapterDayjs}
         adapterLocale={fr}
@@ -36,13 +33,20 @@ export default function AppCalendar({ name, labelName }) {
         }
       >
         <DatePicker
-          size="small"
+          label="Selectonnez une date"
+          slotProps={{ textField: { size: "small" } }}
           sx={{
+            width: "210px",
             backgroundColor: "#fff",
+            svg: { color: "#1a7ead", fontSize: "20px" },
+            input: { fontSize: "13px" },
+            label: { fontSize: "13px" },
           }}
+          c
           margin="normal"
           minDate={dayjs(new Date())}
           format="DD MMMM YYYY"
+          value={values[name]}
           onChange={(selectedDate) => setFieldValue(name, selectedDate)}
         />
       </LocalizationProvider>

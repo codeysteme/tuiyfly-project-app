@@ -4,6 +4,7 @@ import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import React from "react";
 import logo from "../static/tuifly-logo.png";
+import { Box } from "@mui/material";
 
 export default function Header() {
   const displayDesktop = () => {
@@ -23,19 +24,20 @@ export default function Header() {
         >
           <img src={logo} alt="logo tuifly" style={{ width: "137px" }} />
         </IconButton>
-        <Typography
-          variant="h6"
-          component="div"
-          sx={{ flexGrow: 1 }}
-          style={{
-            fontSize: "17px",
-            textAlign: "center",
-            fontFamily: "roboto",
-          }}
-        >
-          Trouvez les vols qu'il vous faut à moindres frais, réserver sans
-          contrainte.
-        </Typography>
+        <Box>
+          <Typography
+            variant="h6"
+            component="div"
+            style={{
+              fontSize: "17px",
+              textAlign: "center",
+              fontFamily: "roboto",
+            }}
+          >
+            Trouvez les vols qu'il vous faut à moindres frais, réserver sans
+            contrainte.
+          </Typography>
+        </Box>
       </Toolbar>
     );
   };

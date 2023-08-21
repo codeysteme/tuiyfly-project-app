@@ -26,9 +26,8 @@ const useStyles = makeStyles(() => ({
   searchBlock: {
     padding: "1.2em",
     marginTop: "1em",
-    height: "150px",
     backgroundColor: "#E3F5FD",
-    width: "1020px",
+    width: "1100px",
   },
   cleanFilterButton: {
     color: "#1a7ead",
