@@ -41,6 +41,7 @@ namespace TuiFly.FlySearchApi.Api.Common.Helpers
         {
             return new FlightPackageResponse
             {
+                TotalResult = flightPackageDtos.TotalResult,
                 PageIndex = flightPackageDtos.PageIndex,
                 TotalPages = flightPackageDtos.TotalPages,
                 Flights = flightPackageDtos.Items.Select(x => x.ToFlightPackageModel()).ToList()
@@ -56,7 +57,6 @@ namespace TuiFly.FlySearchApi.Api.Common.Helpers
         {
             return new FlightPackageModel
             {
-                Id = flight.Id,
                 Depature = ToFlightModel(flight.Depature),
                 Arrival = ToFlightModel(flight.Arrival),
                 TotalPrice = flight.TotalPrice.ToFormatedPrice()

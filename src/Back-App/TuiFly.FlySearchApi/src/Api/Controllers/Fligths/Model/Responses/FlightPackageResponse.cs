@@ -6,6 +6,12 @@ namespace TuiFly.FlySearchApi.Api.Controllers.Fligths.Model.Responses
     public class FlightPackageResponse
     {
         /// <summary>
+        /// the number of total data.
+        /// </summary>
+        [JsonPropertyName("totalResult")]
+        public int TotalResult { get; set; }
+
+        /// <summary>
         /// the number of pages.
         /// </summary>
         [JsonPropertyName("pageIndex")]

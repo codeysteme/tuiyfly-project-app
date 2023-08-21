@@ -3,8 +3,8 @@
     public static class Constants
     {
         //LOGO APP
-        public const string TUIFLY_LOGO = "https://localhost:44304/images/tuifly-logo.png";
-        public const string RYANAIR_LOGO = "https://localhost:44304/images/ryanair-logo.jpg";
+        public const string TUIFLY_LOGO = "https://localhost:44304/images/tuifly-logo.gif";
+        public const string RYANAIR_LOGO = "https://localhost:44304/images/ryanair-logo.gif";
 
         //FLIGHT PRICES
         public const int DEPARTURE_PRICE = 9;

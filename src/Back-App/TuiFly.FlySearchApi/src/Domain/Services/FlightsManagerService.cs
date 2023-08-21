@@ -68,13 +68,13 @@ namespace TuiFly.FlySearchApi.Domain.Services
         /// <summary>
         /// Get flights from app cache or generate by query data
         /// </summary>
-        /// <param name="flightsRequestQuery"></param>
+        /// <param name="flightsQuery"></param>
         /// <param name="departure"></param>
         /// <param name="arrival"></param>
         /// <returns></returns>
-        private IEnumerable<FlightPackageDto> GetFlightsInCacheOrGenerate(FlightsRequestQuery flightsRequestQuery, AirportDto departure, AirportDto arrival)
+        private IEnumerable<FlightPackageDto> GetFlightsInCacheOrGenerate(FlightsRequestQuery flightsQuery, AirportDto departure, AirportDto arrival)
         {
-            var cacheKey = $"{flightsRequestQuery.Departure}-{flightsRequestQuery.Arrival}";
+            var cacheKey = $"{flightsQuery.Departure}-{flightsQuery.Arrival}_{flightsQuery.PassengerNumbers}";
             var cacheOptions = new MemoryCacheEntryOptions
             {
                 Size = _cacheOptions.SizeLimit,
@@ -84,7 +84,7 @@ namespace TuiFly.FlySearchApi.Domain.Services
             return _memoryCache.GetOrCreate(cacheKey, entry =>
             {
                 entry.SetOptions(cacheOptions);
-                return GenerateflightsData(flightsRequestQuery, departure, arrival);
+                return GenerateflightsData(flightsQuery, departure, arrival);
             });
         }
 
@@ -93,17 +93,17 @@ namespace TuiFly.FlySearchApi.Domain.Services
         /// <summary>
         /// Generate flight data
         /// </summary>
-        /// <param name="flightsRequestQuery"></param>
+        /// <param name="flightsQuery"></param>
         /// <param name="departure"></param>
         /// <param name="arrival"></param>
         /// <returns></returns>
-        private IEnumerable<FlightPackageDto> GenerateflightsData(FlightsRequestQuery flightsRequestQuery, AirportDto departure, AirportDto arrival)
+        private IEnumerable<FlightPackageDto> GenerateflightsData(FlightsRequestQuery flightsQuery, AirportDto departure, AirportDto arrival)
         {
             DEFAULT_FLIGHT_PRICE = 0;
             var response = new List<FlightPackageDto>();
-            for (int i = 1; i < 50; i++)
+            for (int i = 0; i < 50; i++)
             {
-                response.Add(BuildFlightPackage(flightsRequestQuery, departure, arrival, i));
+                response.Add(BuildFlightPackage(flightsQuery, departure, arrival));
             }
             return response;
         }
@@ -111,18 +111,16 @@ namespace TuiFly.FlySearchApi.Domain.Services
         /// <summary>
         /// Build a flight package response
         /// </summary>
-        /// <param name="flightsRequestQuery">flight request query</param>
+        /// <param name="flightsQuery">flight request query</param>
         /// <param name="departure">departure airport</param>
         /// <param name="arrival">arrival airport</param>
-        /// <param name="i">index of flights</param>
         /// <returns></returns>
-        private FlightPackageDto BuildFlightPackage(FlightsRequestQuery flightsRequestQuery, AirportDto departure, AirportDto arrival, int i)
+        private FlightPackageDto BuildFlightPackage(FlightsRequestQuery flightsQuery, AirportDto departure, AirportDto arrival)
         {
-            var (priceDeparture, priceReturn) = GetflightsPrices();
+            var (priceDeparture, priceReturn) = GetflightsPrices(flightsQuery.PassengerNumbers);
 
             return new FlightPackageDto
             {
-                Id = i,
                 Depature = new FlightDto
                 {
                     DepartureAirport = departure,
@@ -136,8 +134,8 @@ namespace TuiFly.FlySearchApi.Domain.Services
                 {
                     DepartureAirport = arrival,
                     ArrivalAirport = departure,
-                    DepartureDate = flightsRequestQuery.ReturnDate,
-                    ArrivalDate = flightsRequestQuery.ReturnDate.AddMinutes(15),
+                    DepartureDate = flightsQuery.ReturnDate,
+                    ArrivalDate = flightsQuery.ReturnDate.AddMinutes(15),
                     Logo = Constants.RYANAIR_LOGO,
                     Price = priceReturn
                 },
@@ -148,11 +146,12 @@ namespace TuiFly.FlySearchApi.Domain.Services
         /// <summary>
         /// fix flighs price for each items
         /// </summary>
+        /// <param name="numberPassenger">number of passenger</param>
         /// <returns></returns>
-        private (decimal priceDeparture, decimal priceReturn) GetflightsPrices()
+        private (decimal priceDeparture, decimal priceReturn) GetflightsPrices(int numberPassenger)
         {
-            DEFAULT_FLIGHT_PRICE += Constants.DEPARTURE_PRICE;
-            var returnPrice = DEFAULT_FLIGHT_PRICE + Constants.RETURN_PRICE;
+            DEFAULT_FLIGHT_PRICE += Constants.DEPARTURE_PRICE * numberPassenger;
+            var returnPrice = DEFAULT_FLIGHT_PRICE + Constants.RETURN_PRICE * numberPassenger;
 
             return (DEFAULT_FLIGHT_PRICE, returnPrice);
         }

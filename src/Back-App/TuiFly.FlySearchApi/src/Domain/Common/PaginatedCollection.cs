@@ -21,6 +21,7 @@ namespace TuiFly.FlySearchApi.Domain.Common
 
             return new PaginationModel<TRessouce>
             {
+                TotalResult = count,
                 PageIndex = pageIndex,
                 TotalPages = (int)Math.Ceiling(count / (double)pageSize),
                 Items = items.Skip((pageIndex - 1) * pageSize).Take(pageSize).ToList()
@@ -34,6 +35,11 @@ namespace TuiFly.FlySearchApi.Domain.Common
         /// the number of pages.
         /// </summary>
         public int TotalPages { get; set; }
+
+        /// <summary>
+        /// the number of total data.
+        /// </summary>
+        public int TotalResult { get; set; }
 
         /// <summary>
         /// the number of pages.

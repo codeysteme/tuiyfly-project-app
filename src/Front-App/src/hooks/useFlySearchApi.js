@@ -12,6 +12,7 @@ export default function useFlySearchApi() {
   const flySearchApi = axios.create({
     baseURL: config.get("flySearchApiUrl"),
   });
+  const pageSize = 10;
 
   return {
     getAirports: async () => {
@@ -20,6 +21,18 @@ export default function useFlySearchApi() {
         return data;
       } catch (error) {
         return [];
+      }
+    },
+    getFlightsList: async (filterQuery) => {
+      const pageIndex = filterQuery.pageIndex === undefined ? 1 : filterQuery.pageIndex;
+      console.log(pageIndex);
+
+      const query = `fligths?departure=${filterQuery.departure}&arrival=${filterQuery.arrival}&departureDate=${filterQuery.departureDate}&returnDate=${filterQuery.returnDate}&passengerNumbers=${filterQuery.passengerNumbers}&pageIndex=${pageIndex}&pageSize=${pageSize}`;
+      try {
+        const { data, status } = await flySearchApi.get(query);
+        return status !== 200 ? {} : data;
+      } catch (error) {
+        return {};
       }
     },
   };

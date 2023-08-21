@@ -5,13 +5,6 @@ namespace TuiFly.FlySearchApi.Api.Controllers.Fligths.Model.Responses
     public class FlightPackageModel
     {
         /// <summary>
-        /// the flight id
-        /// </summary>
-        /// <example>1</example>
-        [JsonPropertyName("id")]
-        public int Id { get; set; }
-
-        /// <summary>
         /// the flight price
         /// </summary>
         /// <example>$12</example>

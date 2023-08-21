@@ -8,13 +8,7 @@ import FlightTakeoffIcon from "@mui/icons-material/FlightTakeoff";
 import { useFormikContext } from "formik";
 import { useStyles, autoCompleteStyle } from "./style";
 
-export default function AirportSelect({
-  name,
-  noOptionText,
-  mention,
-  labelName,
-  airports,
-}) {
+export default function AirportSelect({ name, noOptionText, mention, labelName, airports }) {
   const { errors, touched, setFieldValue } = useFormikContext();
   const classes = useStyles();
 
@@ -32,10 +26,7 @@ export default function AirportSelect({
         options={airports}
         getOptionLabel={(option) => option.name}
         renderOption={(props, option) => (
-          <Box
-            {...props}
-            style={{ display: "flex", justifyContent: "space-between" }}
-          >
+          <Box {...props} style={{ display: "flex", justifyContent: "space-between" }}>
             <Box className={classes.boxName}>
               {option.name}, {option.countryName}
             </Box>

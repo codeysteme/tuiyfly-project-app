@@ -3,12 +3,6 @@
     public class FlightPackageDto
     {
         /// <summary>
-        /// the flight id
-        /// </summary>
-        /// <example>1</example>
-        public int Id { get; set; }
-
-        /// <summary>
         /// the flight price
         /// </summary>
         /// <example>$12</example>

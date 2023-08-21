@@ -28,9 +28,7 @@ export default function AppCalendar({ name, labelName }) {
       <LocalizationProvider
         dateAdapter={AdapterDayjs}
         adapterLocale={fr}
-        localeText={
-          frFR.components.MuiLocalizationProvider.defaultProps.localeText
-        }
+        localeText={frFR.components.MuiLocalizationProvider.defaultProps.localeText}
       >
         <DatePicker
           label="Selectonnez une date"
@@ -45,9 +43,7 @@ export default function AppCalendar({ name, labelName }) {
           margin="normal"
           minDate={dayjs(new Date())}
           format="DD MMMM YYYY"
-          onChange={(selectedDate) =>
-            setFieldValue(name, selectedDate.toISOString())
-          }
+          onChange={(selectedDate) => setFieldValue(name, selectedDate.toISOString())}
           slotProps={{
             textField: {
               size: "small",

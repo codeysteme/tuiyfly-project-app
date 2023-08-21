@@ -40,6 +40,23 @@ const useStyles = makeStyles(() => ({
       borderBottomColor: "#1a7ead",
     },
   },
+  resultBlock: {
+    padding: "1em 1.2em",
+    marginTop: "1em",
+    backgroundColor: "rgb(0,0,0,0.5)",
+    width: "1100px",
+    margin: "auto",
+  },
 }));
 
-export default useStyles;
+const resultText = {
+  fontSize: "1.2em",
+  textAlign: "center",
+  backgroundColor: "#fff",
+  padding: "7px",
+  width: "200px",
+  margin: "auto",
+  borderBottom: "2px solid #1a7ead",
+};
+
+export { useStyles, resultText };

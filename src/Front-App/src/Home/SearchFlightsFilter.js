@@ -4,7 +4,7 @@ import Button from "@mui/material/Button";
 import React from "react";
 import AppCalendar from "../Components/AppCalendar";
 import AppForm from "../Components/AppForm";
-import useStyles from "./style";
+import { useStyles } from "./style";
 import AirportSelect from "../Components/AirportSelect";
 import AppInputField from "../Components/AppInputField";
 
@@ -14,6 +14,7 @@ const InitialSearchFlightsFilter = {
   departureDate: null,
   returnDate: null,
   passengerNumbers: 1,
+  pageIndex: 1,
 };
 
 const validationSchema = yup.object().shape({
@@ -67,11 +68,7 @@ export default function SearchFlightsFilter({ airports, handleFilterSubmit }) {
           />
           <AppCalendar labelName="Date de départ" name="departureDate" />
           <AppCalendar labelName="Date de retour" name="returnDate" />
-          <AppInputField
-            labelName="Nombre de passager(s)"
-            name="passengerNumbers"
-            placeHolder="Voyageur(s)"
-          />
+          <AppInputField labelName="Nombre de passager(s)" name="passengerNumbers" placeHolder="Voyageur(s)" />
           <Button
             type="submit"
             variant="filled"
