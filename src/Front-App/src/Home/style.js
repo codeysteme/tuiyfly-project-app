@@ -29,19 +29,6 @@ const useStyles = makeStyles(() => ({
     backgroundColor: "#E3F5FD",
     width: "1100px",
   },
-  cleanFilterButton: {
-    width: "132px",
-    color: "#376AF6",
-    cursor: "pointer",
-    textTransform: "none",
-    borderBottom: "3px solid transparent",
-    borderRadius: 0,
-    paddingBottom: "2px",
-    fontWeight: "none",
-    "&:hover": {
-      borderBottomColor: "#376AF6",
-    },
-  },
   resultBlock: {
     padding: "1em 1.2em",
     marginTop: "1em",
