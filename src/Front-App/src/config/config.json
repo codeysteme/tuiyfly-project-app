@@ -4,7 +4,7 @@
     "bookingApiUrl": "https://localhost:44375/api"
   },
   "production": {
-    "flySearchApiUrl": "https://localhost:7025/api",
-    "bookingApiUrl": "https://localhost:7022/api"
+    "flySearchApiUrl": "http://localhost:7025/api",
+    "bookingApiUrl": "http://localhost:7022/api"
   }
 }

@@ -15,7 +15,7 @@ docker build -t tuifly_app .
 ### `run app`
 
 ```
-docker run -d -p 5088:3000 --name tuifly_app tuifly_app
+docker run -d -p 5088:3000 tuifly_app
 ```
 
 ## Launch and test app in browser

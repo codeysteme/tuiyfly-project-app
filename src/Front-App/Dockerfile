@@ -11,7 +11,8 @@ COPY ./src ./src
 COPY ./public ./public
 
 # Install node packages, install serve, build the app, and remove dependencies at the end
-RUN npm install \
+RUN npm config set legacy-peer-deps true \
+    && npm install \
     && npm install -g serve \
     && npm run build \
     && rm -fr node_modules
