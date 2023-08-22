@@ -38,6 +38,8 @@ const validationSchema = yup.object().shape({
 export default function SearchFlightsFilter({ airports, handleFilterSubmit }) {
   const classes = useStyles();
 
+  const cleanFilter = () => {};
+
   return (
     <Box className={classes.searchBlock}>
       <AppForm
@@ -84,7 +86,7 @@ export default function SearchFlightsFilter({ airports, handleFilterSubmit }) {
         </Box>
       </AppForm>
       <Box>
-        <Button className={classes.cleanFilterButton} variant="text">
+        <Button className={classes.cleanFilterButton} variant="text" onClick={() => cleanFilter()}>
           Supprimer les filtres
         </Button>
       </Box>

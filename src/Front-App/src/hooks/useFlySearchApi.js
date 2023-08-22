@@ -25,7 +25,6 @@ export default function useFlySearchApi() {
     },
     getFlightsList: async (filterQuery) => {
       const pageIndex = filterQuery.pageIndex === undefined ? 1 : filterQuery.pageIndex;
-      console.log(pageIndex);
 
       const query = `fligths?departure=${filterQuery.departure}&arrival=${filterQuery.arrival}&departureDate=${filterQuery.departureDate}&returnDate=${filterQuery.returnDate}&passengerNumbers=${filterQuery.passengerNumbers}&pageIndex=${pageIndex}&pageSize=${pageSize}`;
       try {

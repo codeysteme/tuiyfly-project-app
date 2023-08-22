@@ -101,7 +101,7 @@ namespace TuiFly.FlySearchApi.Domain.Services
         {
             DEFAULT_FLIGHT_PRICE = 0;
             var response = new List<FlightPackageDto>();
-            for (int i = 0; i < 50; i++)
+            for (int i = 0; i < new Random().Next(37, 78); i++)
             {
                 response.Add(BuildFlightPackage(flightsQuery, departure, arrival));
             }

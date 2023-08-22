@@ -1,18 +1,11 @@
 import { string } from "prop-types";
 import { useFormikContext } from "formik";
 import React from "react";
-import {
-  Box,
-  InputAdornment,
-  InputLabel,
-  MenuItem,
-  TextField,
-} from "@mui/material";
+import { Box, InputAdornment, InputLabel, MenuItem, TextField } from "@mui/material";
 import GroupIcon from "@mui/icons-material/Group";
 
 export default function AppInputField({ name, labelName, placeHolder }) {
-  const { errors, touched, handleChange, handleBlur, values } =
-    useFormikContext();
+  const { errors, touched, handleChange, handleBlur, values } = useFormikContext();
 
   const passengerData = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
@@ -51,9 +44,9 @@ export default function AppInputField({ name, labelName, placeHolder }) {
           ),
         }}
       >
-        {passengerData.map((i, option) => (
-          <MenuItem key={option} value={option} style={{ fontSize: "13px" }}>
-            {option} Adulte{option > 1 ? "s" : ""}
+        {passengerData.map((i) => (
+          <MenuItem key={i} value={i} style={{ fontSize: "13px" }}>
+            {i} Adulte{i > 1 ? "s" : ""}
           </MenuItem>
         ))}
       </TextField>

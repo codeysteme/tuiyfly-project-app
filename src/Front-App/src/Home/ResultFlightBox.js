@@ -1,12 +1,12 @@
 import { arrayOf, bool, func, number, shape, string } from "prop-types";
 import React from "react";
-import { Box, Button, Card, CardMedia, Typography } from "@mui/material";
+import { Box, Button, Card, Pagination, Typography } from "@mui/material";
 import { isEmpty } from "ramda";
 import { useStyles, resultText } from "./style";
 import dayjs from "dayjs";
 require("dayjs/locale/fr");
 
-export default function ResultFlightBox({ flightLists, handleActiveRate, handleDeleteRate }) {
+export default function ResultFlightBox({ flightLists, handlePagination }) {
   const classes = useStyles();
 
   const ResultSearch = ({ flights, total }) => {
@@ -15,9 +15,16 @@ export default function ResultFlightBox({ flightLists, handleActiveRate, handleD
         <Typography sx={resultText} variant="h1" component="h2">
           <span style={{ color: "red", fontWeight: "bold" }}>{total}</span> résultats trouvés
         </Typography>
-        <Box sx={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between", marginTop: "1em" }}>
-          {!isEmpty(flightLists) &&
-            flightLists.flights.map((item) => (
+        <Box
+          sx={{
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "space-between",
+            marginTop: "1em",
+          }}
+        >
+          {!isEmpty(flights) &&
+            flights.map((item, i) => (
               <Card
                 style={{
                   display: "flex",
@@ -28,7 +35,7 @@ export default function ResultFlightBox({ flightLists, handleActiveRate, handleD
                   boxShadow: "0 1px 2px 0 #333",
                 }}
                 variant="outlined"
-                key={item.id}
+                key={i}
               >
                 <Box sx={{ display: "flex", width: "190px", flexDirection: "column" }}>
                   <Box sx={{ display: "flex", marginBottom: "6px" }}>
@@ -169,7 +176,29 @@ export default function ResultFlightBox({ flightLists, handleActiveRate, handleD
   };
 
   return (
-    <Box>{!isEmpty(flightLists) && <ResultSearch total={flightLists.totalResult} flights={flightLists.flights} />}</Box>
+    <Box style={{ paddingBottom: "50px" }}>
+      {!isEmpty(flightLists) && (
+        <>
+          <ResultSearch total={flightLists.totalResult} flights={flightLists.flights} />
+          <Box
+            style={{
+              width: "400px",
+              margin: "auto",
+              marginTop: "2.5em",
+            }}
+          >
+            <Pagination
+              sx={{ background: "#fcfcfc" }}
+              count={flightLists.totalPages}
+              color="primary"
+              variant="outlined"
+              shape="rounded"
+              onChange={(e, number) => handlePagination(number)}
+            />
+          </Box>
+        </>
+      )}
+    </Box>
   );
 }
 
@@ -188,8 +217,7 @@ const departureProps = shape({
 
 ResultFlightBox.propTypes = {
   isLoading: bool,
-  handleActiveRate: func,
-  handleDeleteRate: func,
+  handlePagination: func,
 };
 ResultFlightBox.defaultProps = {
   flightLists: shape(
@@ -206,6 +234,5 @@ ResultFlightBox.defaultProps = {
       ),
     })
   ),
-  handleActiveRate: Function.prototype,
-  handleDeleteRate: Function.prototype,
+  handlePagination: Function.prototype,
 };

@@ -38,7 +38,7 @@ namespace TuiFly.FlySearchApi.Api.Controllers.Fligths.Validations
                 .WithMessage("The value '{PropertyValue}' provided for field '{PropertyName}' is invalid.");
 
             RuleFor(m => m)
-                .Must(m => m.DepartureDate.Date.CompareTo(m.ReturnDate.Date) < 0 && m.DepartureDate.Date.CompareTo(DateTime.Now.AddDays(-1)) > 0)
+                .Must(m => m.DepartureDate.Date.CompareTo(DateTime.Now.AddDays(-1)) > 0)
                 .WithMessage("The value provided for DepartureDate must be greater than arrivalDate.");
         }
     }

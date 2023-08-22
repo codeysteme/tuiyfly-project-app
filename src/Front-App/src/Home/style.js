@@ -8,6 +8,7 @@ const useStyles = makeStyles(() => ({
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center",
     backgroundSize: "cover",
+    marginBottom: "50px",
   },
   homeCenterTop: {
     backgroundColor: "#D40E14",
@@ -21,13 +22,12 @@ const useStyles = makeStyles(() => ({
     marginTop: "20px",
     display: "flex",
     justifyContent: "space-around",
-    border: "1px solid red",
   },
   searchBlock: {
     padding: "1.2em",
     marginTop: "1em",
     backgroundColor: "#E3F5FD",
-    width: "1100px",
+    width: "1200px",
   },
   cleanFilterButton: {
     color: "#1a7ead",
