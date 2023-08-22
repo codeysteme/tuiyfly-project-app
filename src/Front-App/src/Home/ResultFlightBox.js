@@ -9,6 +9,49 @@ require("dayjs/locale/fr");
 export default function ResultFlightBox({ flightLists, handlePagination, handleOpenBooking }) {
   const classes = useStyles();
 
+  const BoxFlight = ({ departure }) => {
+    return (
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          marginBottom: "5px",
+        }}
+      >
+        <Box sx={{ display: "flex", alignItems: "center" }}>
+          <img
+            component="img"
+            style={{ height: "20px", marginRight: "8px" }}
+            src={departure.logo}
+            alt="logo departure"
+          />
+          <Box>
+            <Typography component="div" variant="p" sx={{ fontSize: "15px", fontWeight: "530", marginBottom: "4px" }}>
+              {dayjs(departure.departureDate).format("dddd, DD MMMM")}
+            </Typography>
+            <Typography component="div" variant="p" sx={{ fontSize: "12px", fontWeight: "530" }}>
+              {departure.departureAirport.id} - {departure.arrivalAirport.id}
+            </Typography>
+          </Box>
+        </Box>
+        <Typography
+          component="div"
+          variant="h6"
+          sx={{
+            fontSize: "12px",
+            fontWeight: "600",
+            color: "#4C4C4C",
+            width: "20%",
+            textAlign: "center",
+          }}
+        >
+          {departure.price}
+        </Typography>
+      </Box>
+    );
+  };
+
   const ResultSearch = ({ flights, total }) => {
     return (
       <Box className={classes.resultBlock}>
@@ -44,93 +87,12 @@ export default function ResultFlightBox({ flightLists, handlePagination, handleO
                       variant="h5"
                       sx={{ fontSize: "13px", fontWeight: "550", color: "#4C4C4C" }}
                     >
-                      {item.departure.departureAirport.name} - {item.departure.arrivalAirport.name}
+                      {`${item.departure.departureAirport.name}(${item.departure.departureAirport.countryName}) - ${item.departure.arrivalAirport.name}`}
                     </Typography>
                   </Box>
                   <Box sx={{ display: "flex", flexDirection: "column" }}>
-                    <Box
-                      sx={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "center",
-                        marginBottom: "5px",
-                      }}
-                    >
-                      <Box sx={{ display: "flex", alignItems: "center" }}>
-                        <img
-                          component="img"
-                          style={{ height: "20px", marginRight: "8px" }}
-                          src={item.departure.logo}
-                          alt="logo departure"
-                        />
-                        <Box>
-                          <Typography
-                            component="div"
-                            variant="p"
-                            sx={{ fontSize: "15px", fontWeight: "530", marginBottom: "4px" }}
-                          >
-                            {dayjs(item.departure.departureDate).format("dddd, DD MMMM")}
-                          </Typography>
-                          <Typography component="div" variant="p" sx={{ fontSize: "12px", fontWeight: "530" }}>
-                            {item.departure.departureAirport.id} - {item.departure.arrivalAirport.id}
-                          </Typography>
-                        </Box>
-                      </Box>
-                      <Typography
-                        component="div"
-                        variant="h6"
-                        sx={{
-                          fontSize: "12px",
-                          fontWeight: "600",
-                          color: "#4C4C4C",
-                          width: "20%",
-                          textAlign: "center",
-                        }}
-                      >
-                        {item.departure.price}
-                      </Typography>
-                    </Box>
-                    <Box
-                      sx={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "center",
-                      }}
-                    >
-                      <Box sx={{ display: "flex", alignItems: "center" }}>
-                        <img
-                          component="img"
-                          style={{ height: "20px", marginRight: "8px" }}
-                          src={item.arrival.logo}
-                          alt="logo arrival"
-                        />
-                        <Box>
-                          <Typography
-                            component="div"
-                            variant="p"
-                            sx={{ fontSize: "15px", fontWeight: "530", marginBottom: "4px" }}
-                          >
-                            {dayjs(item.arrival.departureDate).format("dddd, DD MMMM")}
-                          </Typography>
-                          <Typography component="div" variant="p" sx={{ fontSize: "12px", fontWeight: "530" }}>
-                            {item.arrival.departureAirport.id} - {item.arrival.arrivalAirport.id}
-                          </Typography>
-                        </Box>
-                      </Box>
-                      <Typography
-                        component="div"
-                        variant="h6"
-                        sx={{
-                          fontSize: "12px",
-                          fontWeight: "600",
-                          color: "#4C4C4C",
-                          width: "20%",
-                          textAlign: "center",
-                        }}
-                      >
-                        {item.arrival.price}
-                      </Typography>
-                    </Box>
+                    <BoxFlight departure={item.departure} />
+                    <BoxFlight departure={item.arrival} />
                   </Box>
                 </Box>
                 <Box

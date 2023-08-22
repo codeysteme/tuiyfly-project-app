@@ -55,6 +55,14 @@ const useStyles = makeStyles(() => ({
     fontWeight: "bold",
     textTransform: "none",
   },
+  cardFlight: {
+    display: "flex",
+    width: "310px",
+    margin: "6px 8px",
+    padding: "8px",
+    justifyContent: "space-between",
+    boxShadow: "0 1px 2px 0 #333",
+  },
 }));
 
 const resultText = {
