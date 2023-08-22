@@ -2,11 +2,9 @@ import makeStyles from "@mui/styles/makeStyles";
 
 const useStyles = makeStyles(() => ({
   inputLabel: {
-    width: "225px",
-    bgcolor: "#fff",
-    input: { fontSize: "13px" },
-    svg: { color: "#1a7ead", fontSize: "20px" },
-    noOptionsText: { color: "#1a7ead", fontSize: "20px" },
+    fontSize: "13px",
+    fontWeight: "normal",
+    color: "#09295D",
   },
   boxId: {
     backgroundColor: "#C6EAFB",
@@ -23,7 +21,7 @@ const useStyles = makeStyles(() => ({
 }));
 
 const autoCompleteStyle = {
-  width: "225px",
+  width: "205px",
   bgcolor: "#fff",
   input: { fontSize: "13px" },
   svg: { color: "#1a7ead", fontSize: "20px" },

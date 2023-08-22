@@ -6,7 +6,8 @@ import AppCalendar from "../Components/AppCalendar";
 import AppForm from "../Components/AppForm";
 import { useStyles } from "./style";
 import AirportSelect from "../Components/AirportSelect";
-import AppInputField from "../Components/AppInputField";
+import AppPassengerField from "../Components/AppPassengerField";
+import { Typography } from "@mui/material";
 
 const InitialSearchFlightsFilter = {
   departure: "",
@@ -22,14 +23,16 @@ const validationSchema = yup.object().shape({
     .string()
     .min(3, "Ville de départ incorrect")
     .max(3, "Ville de départ incorrect")
-    .required("Sélectionnez une ville de départ")
+    .required("Choisir: une ville de départ")
     .nullable(),
   arrival: yup
     .string()
     .min(3, "Ville d'arrivée incorrect")
     .max(3, "Ville d'arrivée incorrect")
-    .required("Sélectionnez une ville d'arrivée")
-    .nullable(),
+    .required("Choisir: une ville d'arrivée")
+    .test("airport-match", "Erreur : ville d'arriver !", function (value) {
+      return this.parent.departure !== value;
+    }),
   departureDate: yup.string().required("Date de départ incorrect"),
   returnDate: yup.string().required("Date de retour incorrect"),
   passengerNumbers: yup.number().required("Nombre de passager(s) incorrect"),
@@ -52,6 +55,7 @@ export default function SearchFlightsFilter({ airports, handleFilterSubmit }) {
             display: "flex",
             justifyContent: "space-between",
             flexWrap: "wrap",
+            alignItems: "flex-end",
           }}
         >
           <AirportSelect
@@ -70,25 +74,27 @@ export default function SearchFlightsFilter({ airports, handleFilterSubmit }) {
           />
           <AppCalendar labelName="Date de départ" name="departureDate" />
           <AppCalendar labelName="Date de retour" name="returnDate" />
-          <AppInputField labelName="Nombre de passager(s)" name="passengerNumbers" placeHolder="Voyageur(s)" />
-          <Button
-            type="submit"
-            variant="filled"
-            style={{
-              backgroundColor: "#09295D",
-              color: "#fff",
-              fontWeight: "bold",
-              textTransform: "none",
-            }}
-          >
-            Chercher
-          </Button>
+          <AppPassengerField labelName="Nombre de passager(s)" name="passengerNumbers" placeHolder="Voyageur(s)" />
+          <Box style={{ display: "flex", alignItems: "flex-end", margin: "5px" }}>
+            <Button
+              type="submit"
+              variant="filled"
+              style={{
+                backgroundColor: "#09295D",
+                color: "#fff",
+                fontWeight: "bold",
+                textTransform: "none",
+              }}
+            >
+              Chercher
+            </Button>
+          </Box>
         </Box>
       </AppForm>
-      <Box>
-        <Button className={classes.cleanFilterButton} variant="text" onClick={() => cleanFilter()}>
+      <Box style={{ marginTop: "10px" }}>
+        <Typography component="div" className={classes.cleanFilterButton} variant="text" onClick={() => cleanFilter()}>
           Supprimer les filtres
-        </Button>
+        </Typography>
       </Box>
     </Box>
   );

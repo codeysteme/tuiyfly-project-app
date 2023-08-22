@@ -14,9 +14,9 @@ export default function AppCalendar({ name, labelName }) {
   const { errors, touched, setFieldValue } = useFormikContext();
 
   return (
-    <Box>
+    <Box style={{ margin: "5px" }}>
       <InputLabel
-        htmlFor="filled-adornment-password"
+        htmlFor={name}
         style={{
           fontSize: "13px",
           fontWeight: "normal",
@@ -33,13 +33,13 @@ export default function AppCalendar({ name, labelName }) {
         <DatePicker
           label="Selectonnez une date"
           sx={{
-            width: "210px",
+            width: "180px",
             backgroundColor: "#fff",
             svg: { color: "#1a7ead", fontSize: "20px" },
             input: { fontSize: "13px" },
             label: { fontSize: "13px" },
           }}
-          c
+          id={name}
           margin="normal"
           minDate={dayjs(new Date())}
           format="DD MMMM YYYY"

@@ -5,14 +5,19 @@ import SearchFlightsFilter from "./SearchFlightsFilter";
 import useFlySearchApi from "../hooks/useFlySearchApi";
 import { useQuery } from "react-query";
 import ResultFlightBox from "./ResultFlightBox";
-import { Button } from "@mui/material";
 import BookingScreen from "./BookingScreen";
+import useBookingApi from "../hooks/useBookingApi";
 
 export default function Home() {
   const classes = useStyles();
-  const { getAirports, getFlightsList } = useFlySearchApi();
   const [flightList, setFlightList] = useState({});
   const [flightFilter, setFlighFilter] = useState({});
+  const [open, setOpen] = useState(false);
+  const [flight, setFlight] = useState({});
+  const [bookingResult, setBookingResult] = useState({});
+
+  const { getAirports, getFlightsList } = useFlySearchApi();
+  const { saveBooking } = useBookingApi();
 
   // All queries
   const getAirportsQuery = useQuery("airports", getAirports, {
@@ -32,8 +37,31 @@ export default function Home() {
     setFlightList(data);
   }
 
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
+  const handleOpenBooking = (value) => {
+    setFlight(value);
+    setOpen(!open);
+    setBookingResult({});
+  };
+
+  async function handleBookingSubmit(value, { resetForm }) {
+    try {
+      const { data, status } = await saveBooking(value);
+      setBookingResult({ msg: data.message, status: status });
+      resetForm({});
+    } catch (err) {
+      switch (err.response.status) {
+        case 409:
+          setBookingResult({ msg: err.response.data.message, status: err.response.status });
+          break;
+        case 400:
+          setBookingResult({ msg: err.response.data.message, status: err.response.status });
+          break;
+        default:
+          setBookingResult({ msg: "Erreur serveur, echec opération !", status: 500 });
+          break;
+      }
+    }
+  }
 
   return (
     <Box className={classes.homeCenterBox}>
@@ -44,9 +72,20 @@ export default function Home() {
       <Box className={classes.searchZone}>
         <SearchFlightsFilter airports={getAirportsQuery.data} handleFilterSubmit={handleFlightsSubmit} />
       </Box>
-      <ResultFlightBox flightLists={flightList} handlePagination={handlePagination} />
-      <Button onClick={handleOpen}>Open modal</Button>
-      <BookingScreen open={open} />
+      <ResultFlightBox
+        flightLists={flightList}
+        handlePagination={handlePagination}
+        handleOpenBooking={handleOpenBooking}
+      />
+      {open && (
+        <BookingScreen
+          open={open}
+          flight={flight}
+          hanldeOpen={() => setOpen(false)}
+          handleSubmit={handleBookingSubmit}
+          bookingResult={bookingResult}
+        />
+      )}
     </Box>
   );
 }

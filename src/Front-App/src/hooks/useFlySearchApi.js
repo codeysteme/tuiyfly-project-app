@@ -3,7 +3,6 @@ import config from "react-global-configuration";
 
 /**
  * The TuiFly.FlySearchApi Manager
- * @param {string} apiName // api config name
  * @returns {httpClient}
  * @example
  * const {getAirports} = useFlySearchApi()

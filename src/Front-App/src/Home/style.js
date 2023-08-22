@@ -24,20 +24,22 @@ const useStyles = makeStyles(() => ({
     justifyContent: "space-around",
   },
   searchBlock: {
-    padding: "1.2em",
-    marginTop: "1em",
+    padding: "1em",
+    paddingBottom: "12px",
     backgroundColor: "#E3F5FD",
-    width: "1200px",
+    width: "1100px",
   },
   cleanFilterButton: {
-    color: "#1a7ead",
+    width: "132px",
+    color: "#376AF6",
+    cursor: "pointer",
     textTransform: "none",
     borderBottom: "3px solid transparent",
     borderRadius: 0,
     paddingBottom: "2px",
-    fontWeight: "normal",
+    fontWeight: "none",
     "&:hover": {
-      borderBottomColor: "#1a7ead",
+      borderBottomColor: "#376AF6",
     },
   },
   resultBlock: {
@@ -46,6 +48,12 @@ const useStyles = makeStyles(() => ({
     backgroundColor: "rgb(0,0,0,0.5)",
     width: "1100px",
     margin: "auto",
+  },
+  buttonBooking: {
+    backgroundColor: "#09295D",
+    color: "#fff",
+    fontWeight: "bold",
+    textTransform: "none",
   },
 }));
 

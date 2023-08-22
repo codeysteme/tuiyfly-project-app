@@ -6,7 +6,7 @@ import { useStyles, resultText } from "./style";
 import dayjs from "dayjs";
 require("dayjs/locale/fr");
 
-export default function ResultFlightBox({ flightLists, handlePagination }) {
+export default function ResultFlightBox({ flightLists, handlePagination, handleOpenBooking }) {
   const classes = useStyles();
 
   const ResultSearch = ({ flights, total }) => {
@@ -28,9 +28,9 @@ export default function ResultFlightBox({ flightLists, handlePagination }) {
               <Card
                 style={{
                   display: "flex",
-                  width: "300px",
+                  width: "310px",
                   margin: "6px 8px",
-                  padding: "8px 1em",
+                  padding: "8px",
                   justifyContent: "space-between",
                   boxShadow: "0 1px 2px 0 #333",
                 }}
@@ -158,12 +158,8 @@ export default function ResultFlightBox({ flightLists, handlePagination }) {
                   <Button
                     type="submit"
                     variant="contained"
-                    style={{
-                      backgroundColor: "#09295D",
-                      color: "#fff",
-                      fontWeight: "bold",
-                      textTransform: "none",
-                    }}
+                    className={classes.buttonBooking}
+                    onClick={() => handleOpenBooking(item)}
                   >
                     Réserver
                   </Button>
@@ -182,15 +178,17 @@ export default function ResultFlightBox({ flightLists, handlePagination }) {
           <ResultSearch total={flightLists.totalResult} flights={flightLists.flights} />
           <Box
             style={{
-              width: "400px",
-              margin: "auto",
+              display: "flex",
+              justifyContent: "space-between",
               marginTop: "2.5em",
+              backgroundColor: "#fff",
+              textAlign: "center",
             }}
           >
             <Pagination
-              sx={{ background: "#fcfcfc" }}
+              sx={{ padding: "5px", margin: "auto" }}
               count={flightLists.totalPages}
-              color="primary"
+              color="secondary"
               variant="outlined"
               shape="rounded"
               onChange={(e, number) => handlePagination(number)}

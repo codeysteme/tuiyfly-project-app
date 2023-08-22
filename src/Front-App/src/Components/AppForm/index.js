@@ -4,11 +4,7 @@ import React from "react";
 
 function AppForm({ initialValues, onSubmit, children, validationSchema }) {
   return (
-    <Formik
-      initialValues={initialValues}
-      validationSchema={validationSchema}
-      onSubmit={onSubmit}
-    >
+    <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={onSubmit}>
       {() => <Form>{children}</Form>}
     </Formik>
   );

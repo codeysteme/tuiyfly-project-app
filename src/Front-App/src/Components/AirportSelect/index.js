@@ -13,8 +13,15 @@ export default function AirportSelect({ name, noOptionText, mention, labelName, 
   const classes = useStyles();
 
   return (
-    <Box>
-      <InputLabel htmlFor={name} className={classes.inputLabel}>
+    <Box style={{ margin: "5px" }}>
+      <InputLabel
+        htmlFor={name}
+        style={{
+          fontSize: "13px",
+          fontWeight: "normal",
+          color: "#09295D",
+        }}
+      >
         {labelName}
       </InputLabel>
       <Autocomplete
