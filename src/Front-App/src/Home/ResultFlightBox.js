@@ -4,10 +4,12 @@ import { Box, Button, Card, Pagination, Typography } from "@mui/material";
 import { isEmpty } from "ramda";
 import { useStyles, resultText } from "./style";
 import dayjs from "dayjs";
+import config from "react-global-configuration";
 require("dayjs/locale/fr");
 
 export default function ResultFlightBox({ flightLists, handlePagination, handleOpenBooking }) {
   const classes = useStyles();
+  const baseUrl = config.get("flySearchApiUrl");
 
   const BoxFlight = ({ departure }) => {
     return (
@@ -23,7 +25,7 @@ export default function ResultFlightBox({ flightLists, handlePagination, handleO
           <img
             component="img"
             style={{ height: "20px", marginRight: "8px" }}
-            src={departure.logo}
+            src={`${baseUrl}${departure.logo}`}
             alt="logo departure"
           />
           <Box>

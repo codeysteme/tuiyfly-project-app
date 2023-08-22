@@ -7,6 +7,7 @@ import { useQuery } from "react-query";
 import ResultFlightBox from "./ResultFlightBox";
 import BookingScreen from "./BookingScreen";
 import useBookingApi from "../hooks/useBookingApi";
+import { isNil } from "ramda";
 
 export default function Home() {
   const classes = useStyles();
@@ -48,8 +49,12 @@ export default function Home() {
       const { data, status } = await saveBooking(value);
       setBookingResult({ msg: data.message, status: status });
       resetForm({});
+      console.log(status);
     } catch (err) {
-      switch (err.response.status) {
+      console.log(isNil(err.response));
+
+      const status = isNil(err.response) ? 500 : err.response.status;
+      switch (status) {
         case 409:
           setBookingResult({ msg: err.response.data.message, status: err.response.status });
           break;

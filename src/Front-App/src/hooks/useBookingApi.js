@@ -9,7 +9,7 @@ import config from "react-global-configuration";
  */
 export default function useBookingApi() {
   const bookingApi = axios.create({
-    baseURL: config.get("bookingApiUrl"),
+    baseURL: `${config.get("bookingApiUrl")}/api`,
   });
 
   return {

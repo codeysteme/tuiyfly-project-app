@@ -9,7 +9,7 @@ import config from "react-global-configuration";
  */
 export default function useFlySearchApi() {
   const flySearchApi = axios.create({
-    baseURL: config.get("flySearchApiUrl"),
+    baseURL: `${config.get("flySearchApiUrl")}/api`,
   });
   const pageSize = 10;
 
