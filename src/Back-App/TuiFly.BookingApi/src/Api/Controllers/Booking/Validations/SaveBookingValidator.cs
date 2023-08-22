@@ -25,9 +25,8 @@ namespace TuiFly.BookingApi.Api.Controllers.Fligths.Validations
             RuleFor(m => m.Phone)
                 .NotNull()
                 .NotEmpty()
-                .MinimumLength(10)
+                .MinimumLength(9)
                 .WithMessage("The value '{PropertyValue}' provided for field '{PropertyName}' is invalid.");
-
 
             RuleFor(m => m.FlightId)
                 .NotNull()

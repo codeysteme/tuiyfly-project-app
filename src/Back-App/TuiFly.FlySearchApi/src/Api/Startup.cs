@@ -38,7 +38,7 @@ namespace TuiFly.FlySearchApi.Api
             services.AddCors(options => options.AddPolicy(name: AllowedSpecificOrigins,
                 policy =>
                 {
-                    policy.WithOrigins("http://localhost:3000")
+                    policy.WithOrigins("http://localhost:3000", "http://localhost:5088")
                     .WithHeaders(HeaderNames.ContentType, HeaderNames.AccessControlAllowOrigin, HeaderNames.Accept);
                 }));
         }

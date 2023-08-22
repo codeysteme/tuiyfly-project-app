@@ -120,18 +120,18 @@ namespace TuiFly.BookingApi.Api.Controllers.Fligths
                 var isSuccess = await _bookingsManagerService.CreateBooking(saveBookingRequest.ToSaveBookingQuery()).ConfigureAwait(false);
                 if (isSuccess)
                 {
-                    return StatusCode(StatusCodes.Status201Created, new { message = "Booking created" });
+                    return StatusCode(StatusCodes.Status201Created, new { message = "Booking created successfully !" });
                 }
             }
             catch (Exception ex)
             {
                 if (ex.Message.Contains("DUPLICATED"))
                 {
-                    return new BadRequestObjectResult(new { message = "Error Booking already exist !" });
+                    return new ConflictObjectResult(new { message = "Booking already exist for this user email !" });
                 }
             }
 
-            return Conflict();
+            return new StatusCodeResult(StatusCodes.Status500InternalServerError);
         }
     }
 }
