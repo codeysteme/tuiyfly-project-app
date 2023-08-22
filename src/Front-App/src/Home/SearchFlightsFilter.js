@@ -7,7 +7,6 @@ import AppForm from "../Components/AppForm";
 import { useStyles } from "./style";
 import AirportSelect from "../Components/AirportSelect";
 import AppPassengerField from "../Components/AppPassengerField";
-import { Typography } from "@mui/material";
 import dayjs from "dayjs";
 
 const InitialSearchFlightsFilter = {
