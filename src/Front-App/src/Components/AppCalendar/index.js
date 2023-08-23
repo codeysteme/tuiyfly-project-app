@@ -43,7 +43,11 @@ export default function AppCalendar({ name, labelName }) {
           margin="normal"
           minDate={dayjs(new Date())}
           format="DD MMMM YYYY"
-          onChange={(selectedDate) => setFieldValue(dayjs(selectedDate).format("YYYY-MM-DDTHH:mm:ss"))}
+          // onChange={(selectedDate) => setFieldValue(name, dayjs(selectedDate).format("YYYY-MM-DDTHH:mm:ss"))}
+          onChange={(selectedDate) => {
+            const dateValue = dayjs(selectedDate).add(1, "d").toISOString();
+            setFieldValue(name, dateValue);
+          }}
           slotProps={{
             textField: {
               size: "small",
