@@ -41,14 +41,20 @@ docker compose up -d
 
 Open [http://localhost:5088](http://localhost:5088) to view it in your browser.
 
-### Lauch backend servers
+### Lauch backend servers : swagger page
 
 ---
 
-`TuiFly.FlySearchApi launcher`
+`TuiFly.FlySearchApi`
 
-Open [http://localhost:7025/swagger/index.html](http://localhost:7025/swagger/index.html) to view it in your browser the swagger.
+Open [http://localhost:7025/swagger/index.html](http://localhost:7025/swagger/index.html) to view it in your browser.
 
-`TuiFly.BookingApi launcher`
+`TuiFly.BookingApi`
 
-Open [http://localhost:7022/swagger/index.html](http://localhost:7022/swagger/index.html) to view it in your browser the swagger.
+Open [http://localhost:7022/swagger/index.html](http://localhost:7022/swagger/index.html) to view it in your browser.
+
+## You can launch each server manually
+
+`Each server has README.md for doc`
+
+#### Thanks for the test : TuiFly

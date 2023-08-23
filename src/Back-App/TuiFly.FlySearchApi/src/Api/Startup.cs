@@ -49,10 +49,10 @@ namespace TuiFly.FlySearchApi.Api
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI();
             }
 
+            app.UseSwagger();
+            app.UseSwaggerUI();
             app.UseCors(AllowedSpecificOrigins);
             app.UseHttpsRedirection();
             app.UseRouting();
