@@ -49,10 +49,7 @@ export default function Home() {
       const { data, status } = await saveBooking(value);
       setBookingResult({ msg: data.message, status: status });
       resetForm({});
-      console.log(status);
     } catch (err) {
-      console.log(isNil(err.response));
-
       const status = isNil(err.response) ? 500 : err.response.status;
       switch (status) {
         case 409:
@@ -75,7 +72,11 @@ export default function Home() {
         2023 et sur toutes les expériences.
       </Box>
       <Box className={classes.searchZone}>
-        <SearchFlightsFilter airports={getAirportsQuery.data} handleFilterSubmit={handleFlightsSubmit} />
+        <SearchFlightsFilter
+          airports={getAirportsQuery.data}
+          handleFilterSubmit={handleFlightsSubmit}
+          handleReset={() => setFlightList({})}
+        />
       </Box>
       <ResultFlightBox
         flightLists={flightList}

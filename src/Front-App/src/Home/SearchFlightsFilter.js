@@ -8,6 +8,7 @@ import { useStyles } from "./style";
 import AirportSelect from "../Components/AirportSelect";
 import AppPassengerField from "../Components/AppPassengerField";
 import dayjs from "dayjs";
+import { Typography } from "@mui/material";
 
 const InitialSearchFlightsFilter = {
   departure: "",
@@ -43,7 +44,7 @@ const validationSchema = yup.object().shape({
   passengerNumbers: yup.number().required("Nombre de passager(s) incorrect"),
 });
 
-export default function SearchFlightsFilter({ airports, handleFilterSubmit }) {
+export default function SearchFlightsFilter({ airports, handleFilterSubmit, handleReset }) {
   const classes = useStyles();
   return (
     <Box className={classes.searchBlock}>
@@ -93,6 +94,11 @@ export default function SearchFlightsFilter({ airports, handleFilterSubmit }) {
           </Box>
         </Box>
       </AppForm>
+      <Box style={{ marginTop: "10px" }}>
+        <Typography component="div" className={classes.cleanFilterButton} variant="text" onClick={handleReset}>
+          Clean response
+        </Typography>
+      </Box>
     </Box>
   );
 }

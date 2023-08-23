@@ -50,6 +50,19 @@ const useStyles = makeStyles(() => ({
     justifyContent: "space-between",
     boxShadow: "0 1px 2px 0 #333",
   },
+  cleanFilterButton: {
+    width: "132px",
+    color: "#376AF6",
+    cursor: "pointer",
+    textTransform: "none",
+    borderBottom: "3px solid transparent",
+    borderRadius: 0,
+    paddingBottom: "2px",
+    fontWeight: "none",
+    "&:hover": {
+      borderBottomColor: "#376AF6",
+    },
+  },
 }));
 
 const resultText = {
