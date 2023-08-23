@@ -39,12 +39,16 @@ docker compose up -d
 
 ## Launch and test app in browser: React-App
 
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Open [http://localhost:5088](http://localhost:5088) to view it in your browser.
 
 ### Lauch backend servers
 
 ---
 
-`SrpTranslatorSettings in appsettings of your project`
+`TuiFly.FlySearchApi launcher`
 
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Open [http://localhost:7025/swagger/index.html](http://localhost:7025/swagger/index.html) to view it in your browser the swagger.
+
+`TuiFly.BookingApi launcher`
+
+Open [http://localhost:7022/swagger/index.html](http://localhost:7022/swagger/index.html) to view it in your browser the swagger.
